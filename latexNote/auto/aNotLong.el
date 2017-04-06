@@ -1,11 +1,13 @@
 (TeX-add-style-hook
- "ampt"
+ "aNotLong"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
-                     '(("ctexbook" "10pt" "UTF8")))
+                     '(("ctexbook" "11pt" "a4paper" "UTF8")))
    (TeX-run-style-hooks
     "latex2e"
     "ctexbook"
-    "ctexbook10"
-    "ctex")))
+    "ctexbook11"
+    "ctex"
+    "color"
+    "xcolor")))
 

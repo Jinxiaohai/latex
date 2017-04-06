@@ -1,0 +1,50 @@
+%#-*- coding:utf-8 -*-
+\documentclass[11pt,a4paper,UTF8]{ctexbook}
+
+\usepackage{ctex}
+\usepackage{color}
+\usepackage{xcolor}
+
+
+\author{xiaohai}
+\date{2017/04/06}
+\title{xiaohai}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\chapter{a not long file}
+\section{开始}
+多个连续的空白字符等于一个空白的字符,句首的空白距离一般会忽略,单个的空行
+等于一个空白距离,两个空白文本之间的空白标志着上段的结束和下段的开始,多个
+的空白行等于一个空白行。
+
+\noindent 重启一段的命令{} : {\color{red}$\backslash$par}\newline
+颜色需要使用的包 : {\color{red}{xcolor}}\newline
+下面是一些常见的特殊字符以及对应的命令:\newline
+\# : {\color{red}$\backslash\#$}\newline
+\$ : {\color{red}$\backslash\$$}\newline
+\% : {\color{red}$\backslash\%$}\newline
+\^{} : {\color{red}$\backslash$\^{}$\{\}$}\newline
+\~{} : {\color{red}$\backslash$~$\{\}$}\newline
+反斜线不等通过$\backslash\backslash$得到,该命令是用来换行的.
+需要使用$\backslash$\$backslash\$得到.\newline
+
+命令的两种形式:\newline
+1.以一个反斜线开始，命令只有字母组成。命令后的空格符、数字、或任何非字母的字符
+都标志着命令的结束。\newline
+2.以一个反斜线和非字母的字符组成。\newline
+latex使用\%进行注释,多行注释使用verbatim宏包提供的comment环境。\newline
+
+\section{进入正题}
+每个源文件都以$\backslash$doucumentclass\{...\}开始。\newline
+导入宏包使用$\backslash$usepackage\{...\}。\newline
+文档的开始使用$\backslash$begin\{doucument\}。\newline
+文档的结束使用$\backslash$end\{document\}。\newline
+
+\section{文档的布局}
+
+
+\end{document}
