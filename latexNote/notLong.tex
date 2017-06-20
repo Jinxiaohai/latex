@@ -1,5 +1,5 @@
 %#-*- coding:utf-8 -*-
-\documentclass[11pt,a4paper,UTF8]{ctexbook}
+\documentclass[11pt,a4paper,UTF8,openany]{ctexbook}
 
 \usepackage{ctex}
 \usepackage{color}
@@ -46,5 +46,45 @@ latex使用\%进行注释,多行注释使用verbatim宏包提供的comment环境
 
 \section{文档的布局}
 
+
+
+%_______________________________________________________________________
+\chapter{数学公式的处理}
+\section{小项的处理}
+\begin{enumerate}
+\item 根号$\sqrt{2}$ : \begin{verbatim}$\sqrt{2}$\end{verbatim}
+\item 上标$x^{2}$ : \begin{verbatim}$x^{2}$\end{verbatim}
+\item 下标$x_{2}$ : \begin{verbatim}$x_{2}$\end{verbatim}
+\item 短横线\textrm{-} : \begin{verbatim}\textrm{-}\end{verbatim}
+\item 来个复杂的$^{16}O^{2-}_{32}$ : \begin{verbatim}$^{16}O^{2-}_{32}$\end{verbatim}
+\item 偏导下标$\partial f_{\mbox{\tiny3}}$ : 如果使用文字作为下标,要将文字模式里
+\begin{verbatim}$\partial f_{\mbox{\tiny3}}$\end{verbatim}
+\item 分式$\frac{num}{div}$ : \begin{verbatim}$\frac{分子}{分母}$\end{verbatim}
+\item n次根号$\sqrt[n]{func}$ : \begin{verbatim}$\sqrt[n]{表达式}$\end{verbatim}
+\item 求和$\sum_{k=1}^n(func)$ : \begin{verbatim}$\sum_{k=1\}^n(表达式)$\end{verbatim}
+
+\end{enumerate}
+
+
+
+%_____________________________________________________________________
+\chapter{各种括号大总结}
+\section{我是括号}
+\noindent 圆括号$\left(\frac{a}{b}\right)$ : 
+\begin{verbatim}\left(\frac{a}{b}\right)\end{verbatim}
+方括号$\left[\frac{a}{b}\right]$ : 
+\begin{verbatim}\left[\frac{a}{b}\right]\end{verbatim}
+大括号$\left\{\frac{a}{b}\right\}$ :
+\begin{verbatim}\left\{\frac{a}{b}\right\}\end{verbatim}
+尖括号$\left\langle\frac{a}{b}\right\rangle$ :
+\begin{verbatim}\left\langle\frac{a}{b}\right\rangle\end{verbatim}
+绝对值$\left|\frac{a}{b}\right|$ :
+\begin{verbatim}\left|\frac{a}{b}\right|\end{verbatim}
+双竖线$\left\|\frac{a}{b}\right\|$ :
+\begin{verbatim}\left\|\frac{a}{b}\right\|\end{verbatim}
+混合括号$\left[a,b\right)$ :
+\begin{verbatim}\left[a,b\right)\end{verbatim}
+混合括号2$\left\langle\psi\right|$ :
+\begin{verbatim}\left\langle\psi\right|\end{verbatim}
 
 \end{document}

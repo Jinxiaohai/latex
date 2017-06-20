@@ -8,4 +8,4 @@ $(EXE):$(SRC)      ;    xelatex $(SRC)
 look:              ;    evince ampt.pdf
 
 .PHONY.:clean
-clean:             ;    $(RM) ampt.aux ampt.log ampt.pdf ampt.dvi ampt.bbl ampt.blg ampt.toc ampt.out
+clean:             ;    $(RM) ampt.aux ampt.log ampt.pdf ampt.dvi ampt.bbl ampt.blg ampt.toc ampt.out ampt.nav ampt.snm

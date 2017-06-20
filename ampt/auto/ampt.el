@@ -2,10 +2,24 @@
  "ampt"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
-                     '(("ctexbook" "10pt" "UTF8")))
+                     '(("beamer" "8pt")))
+   (TeX-add-to-alist 'LaTeX-provided-package-options
+                     '(("ctex" "space" "noindent")))
+   (add-to-list 'LaTeX-verbatim-environments-local "semiverbatim")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperbaseurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "nolinkurl")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-braces-local "path")
+   (add-to-list 'LaTeX-verbatim-macros-with-delims-local "url")
+   (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
-    "ctexbook"
-    "ctexbook10"
-    "ctex")))
+    "beamer"
+    "beamer10"
+    "ctex"
+    "beamerthemeshadow")
+   (LaTeX-add-bibitems
+    "xiaohai")))
 

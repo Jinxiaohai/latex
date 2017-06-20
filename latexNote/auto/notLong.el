@@ -2,7 +2,7 @@
  "notLong"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
-                     '(("ctexbook" "11pt" "a4paper" "UTF8")))
+                     '(("ctexbook" "11pt" "a4paper" "UTF8" "openany")))
    (TeX-run-style-hooks
     "latex2e"
     "ctexbook"

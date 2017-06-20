@@ -1,0 +1,11 @@
+\ttl@change@i {\@ne }{chapter}{4em}{\addvspace {2.3mm}\bf }{\contentslabel {4.0em}}{}{\titlerule *[5pt]{$\cdot $}\contentspage }\relax 
+\ttl@change@v {chapter}{}{}{}\relax 
+\ttl@change@i {\@ne }{section}{4em}{}{\contentslabel {2.5em}}{}{\titlerule *[5pt]{$\cdot $}\contentspage }\relax 
+\ttl@change@v {section}{}{}{}\relax 
+\ttl@change@i {\@ne }{subsection}{7.2em}{}{\contentslabel {3.3em}}{}{\titlerule *[5pt]{$\cdot $}\contentspage }\relax 
+\ttl@change@v {subsection}{}{}{}\relax 
+\contentsline {chapter}{\numberline {第一章\hspace {0.3em}}Class}{1}{chapter.1}
+\contentsline {chapter}{\numberline {附录 A\hspace {0.3em}}C++程序}{2}{appendix.A}
+\contentsline {section}{\numberline {A.1}Ising model}{2}{section.A.1}
+\contentsline {section}{\numberline {A.2}Monter carlo method}{2}{section.A.2}
+\contentsfinish 
