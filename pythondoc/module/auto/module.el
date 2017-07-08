@@ -61,7 +61,8 @@
     "fontspec"
     "titletoc"
     "xcolor"
-    "xeCJK")
+    "xeCJK"
+    "wallpaper")
    (TeX-add-symbols
     '("mycmdC" 2)
     '("mycmdB" 1)

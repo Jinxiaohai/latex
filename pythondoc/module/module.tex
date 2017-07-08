@@ -12,7 +12,7 @@
 \usepackage{fancyhdr}            %%%%页眉页脚设置
 \usepackage{graphicx}            %%%%插图
 \usepackage{geometry}            %%%%版面尺寸控制
-\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm, head=2cm, foot=1cm}
+\geometry{left=2cm, right=2cm, top=2.5cm, bottom=2.5cm, head=2cm, foot=1cm}
 % head=?cm, headmap=?cm
 \usepackage{hyperref}            %%%%超链接
 \usepackage{ifthen}              %%%%条件
@@ -30,6 +30,7 @@
 \usepackage{titletoc}            %%%%目录格式
 \usepackage{xcolor}              %%%%颜色处理
 \usepackage{xeCJK}               %%%%中日朝文字处理
+\usepackage{wallpaper}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -46,7 +47,7 @@
 \begin{document}
 % 页码的设置
 \pagenumbering{Roman}
-
+\ThisCenterWallPaper{1}{./figure/zhenji.jpeg}
 \maketitle
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -66,9 +67,9 @@
 \pagenumbering{arabic}
 % footnote
 \renewcommand{\thefootnote}{}
-\footnote{\heiti{作者简介}: 金小海，男}
-\footnote{\heiti{现在单位}: 不正常人类研究中心}
-\footnote{\heiti{~~~~~~职位}: 被研究对象}
+\footnote{\heiti{作者}: xiaohai，男}
+\footnote{\heiti{单位}: 不正常人类研究中心}
+\footnote{\heiti{职位}: 被研究对象}
 % 将脚注的引用记数设为0.
 \setcounter{footnote}{0}
 \renewcommand{\thefootnote}{\arabic{footnote}}
