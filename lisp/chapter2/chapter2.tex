@@ -1,0 +1,37 @@
+%#-*- coding:utf-8 -*-
+\chapter{求值实践}
+\section{缓冲区名}
+buffer-name和buffer-file-name这两个函数显示缓冲区和文件之间的区别。当对表达式(buffer-name)求值时，
+缓冲区的名称将在回显区中出现。当对(buffer-file-name)表达式求值时，缓冲区所指的那个文件的名称将在
+回显区中出现。通常情况下，由(buffer-name)返回的名称与(buffer-name)所指的文件名称相同，由
+(buffer-file-name)返回的名称是文件完整的路径名。\\
+(在表达式中，括号告诉lisp解释器将buffer-name和buffer-file-name当做函数进行处理；如果没有括号的化
+，则解释器将它们当做变量来对这些符号进行求值。)
+
+\section{获得缓冲区}
+buffer-name函数返回缓冲区的名字。为了获得缓冲区本身，需要另外一个函数：current-buffer。如果在代码
+中使用这个函数，得到的将是缓冲区本身。得到缓冲区本身的唯一方法是用一个函数，如current-buffer函数。
+\par{一个相关的函数是other-buffer。这个函数返回最近使用过的缓冲区，而不是当前的那个缓冲区。}
+
+\section{切换缓冲区}
+当other-buffer函数被一个函数用作参量时，这个other-buffer函数实际上提供了一个缓冲区。通过使用
+other-buffer函数和switch-to-buffer函数来切换到另外一个缓冲区。
+\par{以下就是完成这个任务的lisp表达式：\\
+(switch-to-buffer (other-buffer))\\
+函数switch-to-buffer是这个列表的第一个元素，因此lisp解释器将它作为一个函数并执行这个函数的指令。但在
+这样做之前，解释器将注意到other-buffer在一个括号内，因此先处理这个列表。在本书的后续章节例子中，将
+更多的使用set-buffer函数而不是switch-to-buffer函数。set-buffer函数只做一件事：它将计算机的注意力切换
+到另外一个不同的缓冲区。屏幕上显示的缓冲区并不会改变。}
+
+\section{缓冲区大小和位点的定位}
+几个简单的涉及缓冲区大小和位点的函数：buffer-size, point, point-min, point-max.\\
+\par{buffer-size函数给出缓冲区的大小。}
+\par{在Emacs中，光标所在的当前位置被称为位点(point)。表达式(point)返回一个数字，这个数字给出光标所处
+的位置。}
+\par{point-min函数返回当前缓冲区中位点最小的值，这个值通常为1。}
+\par{point-max函数返回当前缓冲区中位点最大的值。}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
