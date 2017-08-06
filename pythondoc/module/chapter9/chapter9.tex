@@ -1,5 +1,82 @@
 %#-*- coding:utf-8 -*-
 \chapter{数值和数学}
+\section{numbers}
+\section{math--Mathematical functions}
+\subsection{Number-theoretic and representation functions}
+\noindent{\color{red}{math.ceil(x):}}
+\par{返回大于等于x的最小整数。}\\
+
+\noindent{\color{red}{math.copysign(x, y):}}
+\par{返回与y同号的x的值。}\\
+
+\noindent{\color{red}{math.fabs(x):}}
+\par{返回x的绝对值。}\\
+
+\noindent{\color{red}{math.factorial(x):}}
+\par{返回x的阶乘。}\\
+
+\noindent{\color{red}{math.floor(x):}}
+\par{返回小于等于x的最大整数。}\\
+
+\noindent{\color{red}{math.fmod(x, y):}}
+\par{返回x对y取模的余数，fmod类似\%，但是产生的结果可能与\%不同，因为前者以y来决定余数的符号，后者以x来决定余数的符号。}\\
+
+\noindent{\color{red}{math.frexp(x):}}
+\par{返回一个2元组分别是底数以及一个指数，也就是$x=m*2^n$。}\\
+
+\noindent{\color{red}{math.fsun(iterable):}}
+\par{返回x序列值的和。}\\
+
+\noindent{\color{red}{math.gcd(a, b):}}
+\par{返回a与b的最大公约数。}\\
+
+\noindent{\color{red}{math.isclose(a, b, *, rel\_tol=1e-09, abs\_tol=0.0):}}
+\par{如果a和b是如此的接近(小于rel\_tol的值)，则返回True，否则返回Flase。}\\
+
+\noindent{\color{red}{math.isfinite(x):}}
+\par{如果x是数字，且是有限的，则返回True，否则返回Flase。}\\
+
+\noindent{\color{red}{math.isinf(x):}}
+\par{如果x是正无穷或者负无穷，则返回True，否则返回Flase。}\\
+
+\noindent{\color{red}{math.isnan(x):}}
+\par{如果x不是数字，则返回True，否则返回Flase。}\\
+
+\noindent{\color{red}{math.ldexp(x, i):}}
+\par{返回x*($2^i$)。}\\
+
+\noindent{\color{red}{math.modf(x):}}
+\par{返回x的分数部分和整数部分。}\\
+
+\noindent{\color{red}{math.trunc(x):}}
+\par{返回x的整数部分，等同于int()。}\\
+
+\subsection{Power and logarithmic functions}
+\noindent{\color{red}{math.exp(x):}}
+\par{返回$e^x$。}\\
+
+\noindent{\color{red}{math.expm1(x):}}
+\par{返回$e^x-1$。}\\
+
+\noindent{\color{red}{math.log(x[, base]):}}
+\par{返回以base为底数的对数。}\\
+
+\noindent{\color{red}{math.loglp(x):}}
+\par{返回$log_{e}(1+x)$。}\\
+
+\noindent{\color{red}{math.log2(x):}}
+\par{返回math.log(x, 2)。}\\
+
+\noindent{\color{red}{math.log10(x):}}
+\par{返回math.log(x, 10)。}\\
+
+\noindent{\color{red}{math.pow(x, y):}}
+\par{返回$x^y$。}\\
+
+\noindent{\color{red}{math.sqrt(x):}}
+\par{返回x的均方根。}\\
+
+\subsection{三角函数}
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t

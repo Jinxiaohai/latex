@@ -1,5 +1,80 @@
 %#-*- coding:utf-8 -*-
 \chapter{内建类型}
+\section{Truth Value Testing}
+\section{Boolean Operations--and, or, not}
+\section{Comparisons}
+\section{Numeric Types--int, float, complex}
+\section{Iterator Types}
+\section{Sequence Types}
+\section{Text Sequence Type--str}
+\subsection{String Methods}
+\noindent{\color{red}{str.capitalize():}}
+\par{把字符串的第一个字母大写}\\
+
+\noindent{\color{red}{str.casefold():}}
+\par{可识别更多的对象将其输出为小写，类似str.lower()函数。}\\
+
+\noindent{\color{red}{str.center(width[, fillchar]):}}
+\par{返回一个原字符串剧中，并使用空格填充至长度width的新字符串。}\\
+
+\noindent{\color{red}{str.count(sub[, start[, end]]):}}
+\par{返回sub在str中出现的次数，如果start和end指定，则返回指定范围内sub的出现的次数。}\\
+
+\noindent{\color{red}{str.encode(encoding=\textquotedblleft utf-8\textquotedblright,
+errors=\textquotedblleft{strict}\textquotedblright):}}
+\par{以encoding指定的格式编码str。}\\
+
+\noindent{\color{red}{str.endswith(suffix[, start[, end]]):}}
+\par{检查字符串是否以suffix结束，如果start和end指定范围则检查指定的范围内是否以suffix结束，如
+果是，返回True,否则返回False。}\\
+
+\noindent{\color{red}{str.expandtabs(tabsize=8):}}
+\par{把字符串str中的tab符号转换为空格，默认的宽度为8。}\\
+
+\noindent{\color{red}{str.find(sub[, start[, end]]):}}
+\par{检查sub是否包含在str中，如果start和end指定范围，则检查是否包含在指定的范围内。如果是则
+返回开始的索引值，否则返回-1。}\\
+
+\noindent{\color{red}{str.format(*args, **kwargs):}}
+\par{未知}\\
+
+\noindent{\color{red}{str.format\_map(mapping):}}
+\par{未知}\\
+
+\noindent{\color{red}{str.index(sub[, start[, end]]):}}
+\par{和find()类似，只不过如果没找到报ValueError类型的错误。}\\
+
+\noindent{\color{red}{str.isalnum():}}
+\par{如果str至少有一个字符并且所有字符都是字母或者数字则返回True，否则返回False。}\\
+
+\noindent{\color{red}{str.isalpha():}}
+\par{如果str至少有一个字符并且所有字符都是字母则返回true，否则返回False。}\\
+
+\noindent{\color{red}{str.isdecimal():}}
+\par{如果str至少有一个字符并且所有字符都是十进制数字则返回true，否则返回False。}\\
+
+\noindent{\color{red}{str.isdigit():}}
+\par{如果str至少有一个字符并且所有字符都是数字则返回true，否则返回False。}\\
+
+\noindent{\color{red}{str.isidentifier():}}
+\par{未知}\\
+
+\noindent{\color{red}{str.islower():}}
+\par{如果str中包含至少一个区分大小写的字符，并且所有的字符都是小写，则返回True，否则返回False。}\\
+
+\noindent{\color{red}{str.isnumeric():}}
+\par{如果str中只包含数字字符，则返回True，否则返回False。}\\
+
+\noindent{\color{red}{str.isprintable():}}
+\par{如果str中的字符都是可打印的或者为空，则返回True，否则返回False。}\\
+
+\noindent{\color{red}{str.isspace():}}
+\par{如果str中只包含空格，则返回True，否则返回False。}\\
+
+\noindent{\color{red}{str.istitle():}}
+\par{如果str是标题化的，则返回True，否则返回False。}\\
+
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
