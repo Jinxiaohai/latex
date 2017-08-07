@@ -5,7 +5,98 @@
 \section{Comparisons}
 \section{Numeric Types--int, float, complex}
 \section{Iterator Types}
-\section{Sequence Types}
+
+
+
+
+\section{Sequence Types--list, tuple, range}
+\subsection{Common sequence operations}
+\begin{center}
+\begin{tabular}{|l|l|}\hline
+操作                &               结果 \\\hline
+x in s              &               True if an item of s is equal to x, else False \\\hline
+x not in s          &               False if an item of s is equal to x, else True \\\hline
+s + t               &               the concatenation os s and t \\\hline
+s*n or n*s          &               equivalent to adding s to iteself n times \\\hline
+s[i]                &               ith item of s, origin 0 \\\hline
+s[i:j]              &               slice of s from i to j \\\hline
+s[i:j:k]            &               slice of s from i to j with step k \\\hline
+len(s)              &               length of s \\\hline
+min(s)              &               smallest item of s \\\hline
+max(s)              &               largest item of s \\\hline
+s.index(x[, i[, j]])&               index of the first occurrence of x in s\\\hline
+s.count(x)          &               total number of occurrences of x in s \\\hline
+\end{tabular}
+\end{center}
+
+\subsection{不可变序列类型}
+
+
+
+\subsection{改变序列类型}
+\begin{center}
+  \begin{tabular}{|l|l|} \hline
+    s[i] = x         & item i of s is replaced by x \\\hline
+    s[i:j] = t       & slice of s from i to j is replaced by the contents of the iterable t \\\hline
+    del s[i:j]       & same as s[i:j] = [] \\\hline
+    s[i:j:k] = t     & the elements of s[i:j:k] are replaced by those of t \\\hline
+    del s[i:j:k]     & removes the elements of s[i:j:k] from the list \\\hline
+    s.append(x)      & appends x to the end of the sequence \\\hline
+    s.clear()        & removes all items from s (same as del s[:]) \\\hline
+    s.copy()         & creates a shallow copy of s (same as s[:]) \\\hline
+    s.extend(t) or s += t & extends s with the contents of t \\\hline
+    s *= n           & updates s with its contents repeated n times \\\hline
+    s.insert(i, x)   & inserts x into s at the index given by i \\\hline
+    s.pop([i])       & retrieves the item at i and also removes it from s \\\hline
+    s.remove(x)      & remove the first item from s where s[i] == x \\\hline
+    s.reverse()      & reverses the items of s in place \\\hline
+
+  \end{tabular}
+\end{center}
+
+
+
+\subsection{Lists}
+\noindent{\color{red}{list([iterable]):}}
+\par{创建列表的方式：}
+  \begin{enumerate}
+  \item 使用一对中括号。
+  \item 一对中括号包含的逗号分割的元素。
+  \item 列表解析[x for x in iterable]。
+  \item 使用list()函数。
+  \end{enumerate}
+
+
+\noindent{\color{red}{[].sort(*, key=None, reverse=False):}}
+\par{对列表进行原地排序。}\\
+
+\subsection{Tuples}
+\noindent{\color{red}{tuple([iterable]):}}
+\par{创建元组的方式：}
+  \begin{enumerate}
+  \item 使用圆括号。
+  \item 使用逗号进行分割：a, 或者(a, )。
+  \item 圆括号包围的逗号分割的元素：a, b, c 或者(a, b, c)。
+  \item 使用tuple()函数。
+  \end{enumerate}
+
+\subsection{Ranges}
+\noindent{\color{red}{range(stop):}}\\
+\noindent{\color{red}{range(start, stop[, step]):}}
+\par{创建range()的方式。}
+  \begin{enumerate}
+  \item start是起始参数。
+  \item stop是中之参数，但是不包含stop的数值。
+  \item step是步长参数。
+  \end{enumerate}
+
+
+
+
+
+
+
+
 \section{Text Sequence Type--str}
 \subsection{String Methods}
 \noindent{\color{red}{str.capitalize():}}

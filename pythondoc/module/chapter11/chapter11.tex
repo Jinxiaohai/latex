@@ -1,5 +1,146 @@
 %#-*- coding:utf-8 -*-
 \chapter{文件和目录}
+\section{pathlib}
+
+
+
+
+
+
+\section{os.path}
+\noindent{\color{red}{os.path.abspath(path):}}
+\par{返回路径名path的规范化的绝对路径，在大多数的9平台上，该函数等同于normpath()，即normpath(join(os.getcwd(), path))。}\\
+
+\noindent{\color{red}{os.path.basename(path):}}
+\par{返回路径名path的主文档名。在path上调用split()函数，返回的二元组中的第二个元素就是主文档名。这和Unix的basename不同，
+  对于\textquoteleft{/foo/bar/}\textquoteright{},basename返回\textquoteleft{bar}\textquoteright{}，而basename()函数返回
+  空字符串。}\\
+
+\noindent{\color{red}{os.path.commonpath(paths):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.path.commonprefix(list):}}
+\par{返回list中所有路径的最长通用前缀(逐字符的进行比较)。如果list为空，返回空字符串(\textquoteleft{}\textquoteright{})。
+  因为是逐字符比较，所以可能会返回无效的路径。}\\
+
+\noindent{\color{red}{os.path.dirname(path):}}
+\par{返回路径名path的目录名。在path上调用split(),返回的二元组中的第一个元素就是目录名。}\\
+
+\noindent{\color{red}{os.path.exists(path):}}
+\par{如果path引用一个存在的路径，返回True。如果path引用一个断开的符号链接，返回False。在某些平台上，尽管path物理存在，但
+  是由于没有执行os.stat()的权限，该函数也会返回False。}\\
+
+\noindent{\color{red}{os.path.lexists(path):}}
+\par{如果path引用一个存在的路径，返回True.对于path引用一个断开的符号链接，也返回True。等同于缺少os.lstat()的平台上的exists()。}\\
+
+\noindent{\color{red}{os.path.expanduser(path):}}
+\par{在Unix和Windows平台上，返回参数，参数中开头的$\sim$或者$\sim$user被替换成user的主家目录。在Unix上，开头的$\sim$被替
+  换成环境变量HOME，如果它被设置的话；否则，通过内建模块pwd在密码目录查询当前用户的家目录。如果开头是$\sim$user，则直接
+  在密码目录中查询(user的家目录)。}
+\par{在Windows上，将使用HOME和USERPROFILE，如果它们被设置的话；否则使用HOMEPATH和HOMEDRIVE的组合。如果开头是$\sim$user，首先按上述方式得到user路径，然后移除最后的目录部分。如果扩展失败或者参数path不是以$\sim$打头，则直接返回参数(path)。
+}\\
+
+\noindent{\color{red}{os.path.expandvars(path):}}
+\par{返回参数，其中的环境变量被扩展。参数中形如\$name或者\${name}的部分被替换成环境变量name的值。如果格式不正确或者引用了不存在的变量，则不进行替换(或者扩展)。在Windows上, 除了\$name和\${name}之外还支持如\%name\%这样的扩展。
+}\\
+
+\noindent{\color{red}{os.path.getatime(path):}}
+\par{返回path的最后访问时间。返回的是从Unix纪元开始的跳秒数(epoch，Unix纪元，即GMT 1970-01-01 00:00:00)(参见time模块)。如果文件不存在或者不可访问，返回os.error。}\\
+
+\noindent{\color{red}{os.path.getmtime(path):}}
+\par{返回path的最后修改时间。返回的是从Unix纪元开始的跳秒数(参见time模块)。如果文件不存在或者不可访问，返回os.error。}\\
+
+\noindent{\color{red}{os.path.getctime(path):}}
+\par{返回系统的ctime，在Unix这样的系统上，它是文件元数据最后修改时间(或者可以说是文件状态最后修改时间)；在Windows这样  的系统上，它是path的创建时间。返回的是从Unix纪元开始的跳秒数(参见time模块)。如果文件不存在或者不可访问，返回os.error。}\\
+
+\noindent{\color{red}{os.path.getsize(path):}}
+\par{返回path的大小，以字节为单位。如果文件不存在或者不可访问，返回os.error。}\\
+
+\noindent{\color{red}{os.path.isabs(path):}}
+\par{如果path是绝对路径名，返回True。在Unix上，这表示路径以/开始；在Windows上，这表示路径以\textbackslash{}开始(在去掉可能的盘符后，如C:)。}\\
+
+\noindent{\color{red}{os.path.isfile(path):}}
+\par{如果path是一个存在的普通文件，返回True。它会跟随符号链接，所以对相同的路径，islink()和isfile()可以同时为真。}\\
+
+\noindent{\color{red}{os.path.isdir(path):}}
+\par{如果path是一个存在的目录，返回True。它会跟随符号链接，所以对于相同的路径，islink()和isdir()可以同时为真。}\\
+
+\noindent{\color{red}{os.path.islink(path):}}
+\par{如果path引用的目录条目是个符号链接，返回True。如果Python运行期不支持符号链接，则总是返回False。}\\
+
+\noindent{\color{red}{os.path.ismount(path):}}
+\par{如果路径名path是一个mount point(挂载点)，返回True。挂载点是文件系统中的一点，不同的文件系统在此被挂载。它检查path
+的父目录path/..和path是否在不同的设备上，或者检查path/..和path是否指向相同设备的相同i-node，——这可以检查出Unix和POSIX变种下的挂载点。}\\
+
+\noindent{\color{red}{os.path.join(path, *paths):}}
+\par{将一个或多个路径正确地连接起来。如果任何一个参数是绝对路径，那之前的参数就会被丢弃，然后连接继续。}\\
+
+\noindent{\color{red}{os.path.normcase(path):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.path.normpath(path):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.path.realpath(path):}}
+\par{未知}\\
+
+
+
+\section{fileinput}
+
+
+
+
+
+\section{stat}
+
+
+
+
+
+\section{filecmp}
+
+
+
+
+
+\section{tempfile}
+
+
+
+
+
+\section{glob}
+
+
+
+
+
+\section{fnmatch}
+
+
+
+
+
+\section{linecache}
+
+
+
+
+
+\section{shutil}
+
+
+
+
+
+\section{macpath}
+
+
+
+
+
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
