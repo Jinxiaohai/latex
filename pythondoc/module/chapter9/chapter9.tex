@@ -1,6 +1,10 @@
 %#-*- coding:utf-8 -*-
 \chapter{数值和数学}
 \section{numbers}
+
+
+
+
 \section{math--Mathematical functions}
 \subsection{Number-theoretic and representation functions}
 \noindent{\color{red}{math.ceil(x):}}
@@ -77,6 +81,249 @@
 \par{返回x的均方根。}\\
 
 \subsection{三角函数}
+\noindent{\color{red}{math.acos(x):}}
+\par{返回x的反余弦。}\\
+
+\noindent{\color{red}{math.asin(x):}}
+\par{返回x的反正弦。}\\
+
+\noindent{\color{red}{math.atan(x):}}
+\par{返回x的反正切。}\\
+
+\noindent{\color{red}{math.atan2(y, x):}}
+\par{返回y/x的反正切。}\\
+
+\noindent{\color{red}{math.cos(x):}}
+\par{返回x的余弦。}\\
+
+\noindent{\color{red}{math.hypot(x, y):}}
+\par{返回(x, y)距离原点的欧几里得距离。}\\
+
+\noindent{\color{red}{math.sin(x):}}
+\par{返回x的正弦。}\\
+
+\noindent{\color{red}{math.tan(x):}}
+\par{返回的正切。}\\
+
+\subsection{角度变换}
+\noindent{\color{red}{math.degrees(x):}}
+\par{将x由弧度转换为角度。}\\
+
+\noindent{\color{red}{math.radians(x):}}
+\par{将x由角度转换为弧度。}\\
+
+\subsection{双曲函数}
+\noindent{\color{red}{math.acosh(x):}}
+\par{返回x的反双曲余弦。}\\
+
+\noindent{\color{red}{math.asinh(x):}}
+\par{返回x的反双曲正弦。}\\
+
+\noindent{\color{red}{math.atanh(x):}}
+\par{返回x的反双曲正切。}\\
+
+\noindent{\color{red}{math.cosh(x):}}
+\par{返回x的双曲余弦。}\\
+
+\noindent{\color{red}{math.sinh(x):}}
+\par{返回x的双曲正弦。}\\
+
+\noindent{\color{red}{math.tanh(x):}}
+\par{返回x的双曲正切。}\\
+
+\subsection{特殊函数}
+\noindent{\color{red}{math.erf(x):}}
+\par{未知}\\
+
+\noindent{\color{red}{math.erfc(x):}}
+\par{未知}\\
+
+\noindent{\color{red}{math.gamma(x):}}
+\par{返回x的gamma函数。}\\
+
+\noindent{\color{red}{math.lgamma(x):}}
+\par{未知}\\
+
+\subsection{常数}
+\noindent{\color{red}{math.pi:}}
+\par{常数$\pi$。}\\
+
+\noindent{\color{red}{math.e:}}
+\par{自然常数。}\\
+
+\noindent{\color{red}{math.inf:}}
+\par{正无穷的浮点数。}\\
+
+\noindent{\color{red}{math.nan:}}
+\par{浮点型的非数字。}\\
+
+
+
+
+
+\section{cmath-Mathematical functions for complex numbers}
+\subsection{Conversions to and from polar coordinates}
+\noindent{\color{red}{cmath.phase(x):}}
+\par{返回x的相位角，等同于math.atan2(x.img, x.real)。}\\
+
+\noindent{\color{red}{cmath.polar(x):}}
+\par{返回在极坐标系下x的值，返回的是一个对(r, phi)，其中r是x的模，phi是方位角。x.polar(x)等同于(abs(x), phase(x))。}\\
+
+\noindent{\color{red}{cmath.rect(r, phi):}}
+\par{返回一个复数，其数值为r*(math.cos(phi) + math.sin(phi)*1j)。}\\
+
+\subsection{Power and logarithmic functions}
+\noindent{\color{red}{cmath.exp(x):}}
+\par{返回$e^x$。}\\
+
+\noindent{\color{red}{cmath.log(x[, base]):}}
+\par{对于给定的底数base，返回x的对数。}\\
+
+\noindent{\color{red}{cmath.log10(x):}}
+\par{返回cmath.log(x, 10)。}\\
+
+\noindent{\color{red}{cmath.sqrt(x):}}
+\par{返回x的均方根。}\\
+
+\subsection{三角函数}
+\noindent{\color{red}{cmath.acos(x):}}
+\par{返回x的反余弦。}\\
+
+\noindent{\color{red}{cmath.asin(x):}}
+\par{返回x的反正弦。}\\
+
+\noindent{\color{red}{cmath.atan(x):}}
+\par{返回x的反正切。}\\
+
+\noindent{\color{red}{cmath.cos(x):}}
+\par{返回x的余弦。}\\
+
+\noindent{\color{red}{cmath.sin(x):}}
+\par{返回x的正弦。}\\
+
+\noindent{\color{red}{cmath.tan(x):}}
+\par{返回x的正切。}\\
+
+\subsection{双曲函数}
+\noindent{\color{red}{cmath.acosh(x):}}
+\par{返回x的反双曲余弦。}\\
+
+\noindent{\color{red}{cmath.asinh(x):}}
+\par{返回x的反双曲正弦。}\\
+
+\noindent{\color{red}{cmath.atanh(x):}}
+\par{返回x的反双曲正切。}\\
+
+\noindent{\color{red}{cmath.cosh(x):}}
+\par{返回x的双曲余弦。}\\
+
+\noindent{\color{red}{cmath.sinh(x):}}
+\par{返回x的双曲正弦。}\\
+
+\noindent{\color{red}{cmath.tanh(x):}}
+\par{返回x的双曲正切。}\\
+
+\subsection{Classification functions}
+同math模块。
+\subsection{常数}
+同math模块。
+
+
+
+\section{decimal-Decimal fixed point and floating point arithmetic}
+
+
+
+
+
+\section{fractions--Rational numbers}
+
+
+
+
+
+\section{random--Generate pseudo-random numbers}
+\subsection{Bookkeeping functions}
+\noindent{\color{red}{random.seed(a=None, version=2):}}
+\par{设置随机数的起始种子，如果a省略，将会使用系统当前的时间作为种子。}\\
+
+\noindent{\color{red}{random.getstate():}}
+\par{未知}\\
+
+\noindent{\color{red}{random.setstate(state):}}
+\par{未知}\\
+
+\noindent{\color{red}{random.getrandbits(k):}}
+\par{未知}\\
+
+\subsection{Functions for integers}
+\noindent{\color{red}{random.randrange(stop):}}
+\par{返回指定递增基数集合中的一个随机数，基数的缺省值为1。}\\
+
+\noindent{\color{red}{random.randrange(start, stop[, step]):}}
+\par{返回指定递增基数集合中的一个随机数，start指定范围内的起始值，end指定范围的结束值(左闭右开)，step指定递增基数。}\\
+
+\noindent{\color{red}{random.randint(a, b):}}
+\par{返回[a, b]之间的一个随机整数，等同于random.randrange(a, b+1)。}\\
+
+\subsection{Functions for sequences}
+\noindent{\color{red}{random.choice(seq):}}
+\par{从序列的元素中随机挑选一个元素。}\\
+
+\noindent{\color{red}{random.choices(population, weights=None, *, cum\_weights=None, k=1):}}
+\par{未知}\\
+
+\noindent{\color{red}{random.shuffle(x[, random]):}}
+\par{将序列的所有元素随机排序。}\\
+
+\noindent{\color{red}{random.sample(population, k):}}
+\par{从序列中随机挑选k个元素。}\\
+
+\subsection{Real-valued distributions}
+\noindent{\color{red}{random.random():}}
+\par{随机生成下一个实数，它在[0, 1)范围内。}\\
+
+\noindent{\color{red}{random.uniform(a, b):}}
+\par{返回一个随机数，它在[a, b]分为内。}\\
+
+\noindent{\color{red}{random.triangular(low, high, mode):}}
+\par{未知}\\
+
+\noindent{\color{red}{random.betavariate(alpha, beta):}}
+\par{未知}\\
+
+\noindent{\color{red}{random.expovariate(lambda):}}
+\par{未知}\\
+
+\noindent{\color{red}{random.gammavariate(alpha, beta):}}
+\par{未知}\\
+
+\noindent{\color{red}{random.gauss(mu, sigma):}}
+\par{未知}\\
+
+\noindent{\color{red}{random.lognormvariate(mu, sigma):}}
+\par{未知}\\
+
+\noindent{\color{red}{random.normalvariate(mu, sigma):}}
+\par{未知}\\
+
+\noindent{\color{red}{random.vonmisesvariate(mu, kappa):}}
+\par{未知}\\
+
+\noindent{\color{red}{random.paretovariate(alpha):}}
+\par{未知}\\
+
+\noindent{\color{red}{random.weibullvariate(alpha, beta):}}
+\par{未知}\\
+
+
+
+
+
+
+
+
+\section{statistics--Mathematical statistics functions}
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
