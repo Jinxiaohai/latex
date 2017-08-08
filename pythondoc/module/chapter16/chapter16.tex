@@ -1,5 +1,120 @@
 %#-*- coding:utf-8 -*-
 \chapter{Generic Operating System Services}
+\section{os--Miscellaneous operating system interfaces}
+该模块提供了方便的使用操作系统依赖的函数的方式。如果你想读或者写文件，你应该看open()，如果你想操作路径，你应该看os.path
+模块，如果你想读取文件内的所有行，你应该看fileinput模块，如果你想操作临时文件或者目录，你应该看tempfile模块，对于较高级
+别的目录和文件处理，你应该看shutil模块。
+
+\noindent{\color{red}{os.error:}}
+\par{内建OSError错误的别名。}\\
+
+\noindent{\color{red}{os.name:}}
+\par{导入依赖操作系统模块的名字。下面是目前被注册的名字：“posix”, nt”，“java”。}
+
+
+
+
+
+\subsection{File Names, Command Line Arguments, and Environment Variables}
+
+
+
+
+
+
+\subsection{Process Parameters}
+\noindent{\color{red}{os.ctermid():}}
+\par{返回进程控制终端的文件名。在unix中有效，请查看相关文档。}\\
+
+\noindent{\color{red}{os.environ:}}
+\par{一个mapping对象表示环境。例如，environ[“HOME”] ，表示的你自己home文件夹的路径(某些平台支持，windows不支持)
+，它与C中的getenv(“HOME”)一致。}
+\par{这个mapping对象在os模块第一次导入时被创建，一般在python启动时，作为site.py处理过程的一部分。在这一次之后改变environment不影响os.environ，除非直接修改os.environ。}
+\par{注：putenv()不会直接改变os.environ，所以最好是修改os.environ。}
+\par{注：在一些平台上，包括FreeBSD和Mac OS X，修改environ会导致内存泄露。参考 putenv()的系统文档。}
+\par{如果没有提供putenv()，mapping的修改版本传递给合适的创建过程函数，将导致子过程使用一个修改的environment。}
+\par{如果这个平台支持unsetenv()函数，你可以删除mapping中的项目。当从os.environ使用pop()或clear()删除一个项目时，unsetenv()会自动被调用（版本2.6）。}\\
+
+\noindent{\color{red}{os.environb:}}
+\par{environ的bytes版本。}\\
+
+\noindent{\color{red}{os.chdir(path):}}
+\par{用于改变当前的工作目录到path指定的目录。}\\
+
+\noindent{\color{red}{os.fchdir(fd):}}
+\par{用于改变当前的工作目录到fd描述的目录。}\\
+
+\noindent{\color{red}{os.getcwd():}}
+\par{返回一个用于表示当前目录的字符串。}\\
+
+\noindent{\color{red}{os.fsencode(filename):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.fsdecode(filename):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.fspath(path):}}
+\par{返回path所代表的文件系统。}\\
+
+\noindent{\color{red}{os.getenv(key, default=None):}}
+\par{返回environment变量key的值，返回的结果是个str。}\\
+
+\noindent{\color{red}{os.getenvb(key, default=None):}}
+\par{返回environment变量key的值，返回的结果是个bytes。}\\
+
+\noindent{\color{red}{os.get\_exec\_path(env=None):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.getegid():}}
+\par{返回当前进程有效的group的id。对应于当前进程的可执行文件的“set id”的bit位。在unix中有效，请查看相关文档。}\\
+
+\noindent{\color{red}{os.geteuid():}}
+\par{返回当前进程有效的user的id。在unix中有效，请查看相关文档。}\\
+
+\noindent{\color{red}{os.getgid():}}
+\par{返回当前进程当前group的id。}\\
+
+\noindent{\color{red}{os.getgrouplist(user, group):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.getgroups():}}
+\par{返回当前进程支持的groups的id列表。}\\
+
+\noindent{\color{red}{os.getlogin():}}
+\par{返回进程控制终端登陆用户的名字。在大多情况下它比使用environment变量LOGNAME来得到用户名，或使用pwd.getpwuid(os.getuid())[0] 得到当前有效用户id的登陆名更为有效。}\\
+
+\noindent{\color{red}{os.getpgid(pid):}}
+\par{返回pid进程的group id.如果pid为0,返回当前进程的group id。}\\
+
+\noindent{\color{red}{os.getpgrp():}}
+\par{返回当前进程组的id。}\\
+
+\noindent{\color{red}{os.getpid():}}
+\par{返回当前进程的id。}\\
+
+\noindent{\color{red}{os.getppid():}}
+\par{返回当前父进程的id。}\\
+
+\noindent{\color{red}{os.getpriority(which, who):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.getresuid():}}
+\par{返回一个元组(ruid, euid, suid)代表当前进程的real, effective和saved user ids。}\\
+
+\noindent{\color{red}{os.getresgid():}}
+\par{返回一个元组(rgid, egid, sgid)代表当前进程的real， effective和saved group ids。}\\
+
+\noindent{\color{red}{os.getuid():}}
+\par{返回当前进程的真正用户的id。}\\
+
+\noindent{\color{red}{os.initgroups(username, gid):}}
+\par{未知。}\\
+
+
+
+
+
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t

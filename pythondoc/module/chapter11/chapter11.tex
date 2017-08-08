@@ -129,6 +129,59 @@
 
 
 \section{shutil}
+shutil模块提供了较高级别的文件和目录的操作。尤其是函数提供了对文件的复制和删除。
+\subsection{Directory and files operations}
+\noindent{\color{red}{shutil.copyfileobj(fsrc, fdst[, length]):}}
+\par{copy文件内容到另一个文件，可以copy指定大小的内容，注意！在其中fsrc，fdst都是文件对象，都需要打开后才能进行复制操作。}\\
+
+\noindent{\color{red}{shutil.copyfile(src, dst, *, follow\_sysmlinks=True):}}
+\par{从源src复制到dst中去。当然前提是目标地址是具备可写权限。抛出的异常信息为IOException.如果当前的dst已存在的话就会被覆盖掉。}\\
+
+\noindent{\color{red}{shutil.SameFileError:}}
+\par{如果copyfile()的source和destination相同，则导致该错误。}\\
+
+\noindent{\color{red}{shutil.copymode(src, dst, *, follow\_sysmlinks=True):}}
+\par{复制src的权限到dst，也就是将dst的权限修改为和src一样，其中文件的内容，属主和所属组并不会受到任何的影响。}\\
+
+\noindent{\color{red}{shutil.copystat(src, dst, *, follow\_sysmlinks=True):}}
+\par{复制src的权限，最后的访问时间，修改时间和flags到dst。}\\
+
+\noindent{\color{red}{shutil.copy(src, dst, *, follow\_sysmlinks=True):}}
+\par{复制文件src到dst文件或者目录，其中src和dst都应该是字符串。}\\
+
+\noindent{\color{red}{shutil.copy2(src, dst, *, follow\_sysmlinks=True):}}
+\par{在copy上的基础上再复制文件最后访问时间与修改时间也复制过来了。}\\
+
+\noindent{\color{red}{shutil.ignore\_patterns(*patterns):}}
+\par{未知}\\
+
+\noindent{\color{red}{shutil.copytree(src, dst, sysmlinks=False, ignore=None,\\ copy\_function=copy2, ignore\_dangling\_sysmlinks=False):}}
+\par{递归的拷贝文件目录及其下面的所有文件。}\\
+
+\noindent{\color{red}{shutil.rmtree(path, ignore\_errors=False, onerror=None):}}
+\par{递归的删除文件。}\\
+
+\noindent{\color{red}{shutil.move(src, dst, copy\_function=copy2):}}
+\par{递归的移动文件或目录(src)到另一个位置(dst)，并返回destination。}\\
+
+\noindent{\color{red}{shutil.disk\_usage(path):}}
+\par{返回一个元组，元组的内容是盘符的总容量，已使用和剩余空间。}\\
+
+\noindent{\color{red}{shutil.chown(path, user=None, group=None):}}
+\par{修改path的属主和所属组。}\\
+
+\noindent{\color{red}{shutil.which(cmd, mode=os.F\_OK, path=None):}}
+\par{返回可执行命令cmd的路径，同linux命令。}\\
+
+\noindent{\color{red}{shutil.Error:}}
+\par{多文件操作引起的错误。}\\
+
+\subsection{Archiving operations}
+
+\noindent{\color{red}{shutil.make\_archive(base\_name, format[, root\_dir[, base\_dir[, verbose[, dry\_run[, owner[, group[, logger]]]]]]]):}}
+\par{创建一个架构文件并返回它的名字。}\\
+
+
 
 
 
