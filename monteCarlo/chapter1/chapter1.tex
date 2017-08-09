@@ -1,6 +1,71 @@
 %#-*- coding:utf-8 -*-
 \chapter{引言}
-%%% Local Variables:
+这本书是关于用计算机解决统计物理学中问题的，特别是用蒙特卡罗方法。
+\section{统计力学}
+统计力学主要考虑用来计算condensed matter系统的性质。通常这些系统由众多的部分组成，典型的如原子或者分子。这些部分通常相同
+且它们遵循着相对简单的运动方程，以至于可以直接的写出数学表达式。但是这些运动方程的数量是众多的，以至于我们无法得到系统精
+确的数学解。对于这些\textquotedblleft{大系统}\textquotedblright{}而言，解这些系统的Hamilton's方程是不可能的，因为有太多
+的等式。然而当我们观察系统的宏观特性时，这些特性是如此的well-behaved和可预测的。Clearly, there is something special
+about the behaviour of the solutions of these many equations that \textquotedblleft{average out}\textquotedblright{} to
+give us a pridictable behaviour for the entire system。例如气体的压强和体积就遵循简单的规律。统计物理学将解大量的运动方
+程放在一边，而是从系统的整体特性出发，考虑系统处在某个状态的概率---系统可能处在这个状态或者另一个状态，并且有其对应的压
+强或者其它的物理量。我们发现统计物理学的概率描述是如此的有用，because we usually find that for large systems the range
+of behaviours of the system that are anything more than phenomenally unlikely is very small; all the reasonably probable
+behaviours fall into a narrow range,允许我们以极高的置信度去描述系统。
+
+在这本书的剩下部分，我们主要探讨系统由Hamiltonian函数描述的能量确定的状态。我们主要探讨分立的状态\textemdash{}每个状态有其自己的能量$E_{0},E_{1},E_{2}$\dots{}，可能没有上限。同样的统计力学和模特卡罗方法同样的适用于连续的状态。
+
+如果我们拥有系统的Hamiltonian量，系统的能量就可以确定下来。然而系统通常并不是独立的，而是和其它的thermal reservoir进行这
+热交换。(参看朗道的统计物理学)
+
+假设我们的系统处于状态$\mu$。我们用$R(\mu\rightarrow{}\nu)dt$表示系统在$dt$时刻后处在$\nu$的概率。
+$R(\mu\rightarrow{}\nu)$是系统的{\textbf{transition rate}}对于从$\mu$到$\nu$的转变。transiton rate通常是不含时的。对于初始的状态$\mu$经过一段时间后，系统可能处在大量的其它的状态之一，而这就是我们概率处理问题热力学的原因。我们定义一系列的权重
+$\omega_{\mu}(t)$来代表系统在时刻$t$处在状态$\mu$的概率。Statistical mechanics deals with these weights, and they
+represent out entire knowledge about the state of the system.对于$\omega_{\mu}(t)$的演化，我们写出一个关于
+$R(\mu\rightarrow{}\nu)$的\textbf{master equation}:
+\begin{equation}
+  \label{eq:1}
+  \frac{dw_{\mu}}{dt} = \sum_{\nu}\left[\omega_{\nu}(t)R(\nu\rightarrow{}\mu)-\omega_{\mu}(t)R(\mu\rightarrow{}\nu)\right].
+\end{equation}
+右边第一项是转变到状态$\mu$的概率，第二项是从状态$\mu$到其它状态的概率。概率$\omega_{\mu}(t)$遵循求和规则
+\begin{equation}
+  \label{eq:2}
+  \sum_{\mu}\omega_{\mu}(t) = 1
+\end{equation}
+对所有的$t$。
+\par
+如何将权重$\omega_{\mu}$和系统的宏观状态联系起来呢?例如我们对物理量$Q$感兴趣，对每一个状态$\mu$，其对应的物理量为
+$Q_{\mu}$，我们可以定义$Q$的期望值在时刻$t$对于我们的系统:
+\begin{equation}
+  \label{eq:3}
+  \left<Q\right> = \sum_{\mu}Q_{\mu}\omega_{\mu}(t).
+\end{equation}
+很明显该期望值和我们在实验中测量到的物理量$Q$有很大的关系.例如,系统处在状态$\tau$,则期望值$\left[Q\right].$对应的测量值
+即为$Q_{\tau}$,又如系统等可能的处在三个状态,且处在其它状态的概率为0.则期望值等于三个状态$Q$的平均值.然而对于平均值的理解,存
+在两种不同的观点。\textbf{第一种}，我们将要考虑的系统进行大量的复制，瞬间的测量这些众多的系统，然后给出我们要考虑的系统平
+均值。然而实际上，我们只有一个这样的系统，无法在实验上进行复制。\textbf{第二种}，我们对要考虑的系统进行大量反复的测量，
+且出现\textquotedblleft{representative selection of the states}\textquotedblright{}。这
+有点类似于(\ref{eq:3})的处理。只要重复测量的次数足够的多，我们就能更好的增加测量值和期望值之间近似度。
+\par
+然而这里有存在两个问题，\textbf{第一}，什么才叫\textquotedblleft{representative selection of the
+  states}\textquotedblright.可能在我们的测量过程中，系统只在某两个状态之间进行转变，而我们的测量刚好都在一个状态。而又或
+者系统在快速的进行改变，并没有达到平衡的状态，这是一个很重要的问题。\textbf{第二}，另一个问题就是权重参数
+$\omega_{\mu}(t)$是含时的，对系统的测量可能会影响到$\omega_{\mu}(t)$，从而使我们的表达式无效。这些都是在实验和模拟中存在
+的非平衡态系统问题，而这正是这本书第二部分要处理的问题。对于平衡系统，在我们以后的讨论中，权重参数都是不随时间演化的。
+\par
+尽管存在这么多的问题，时间平均的解释在实验和模拟上都被广泛的应用。
+
+
+
+
+
+
+
+
+\section{平衡态}
+让我们再考虑\textbf{master equation}(\ref{eq:1})。如果等式的右边两部分可以抵消掉，即$d\omega_{\mu}/dt$等于0.也就是权
+重参数$\omega$将是常数。这时系统达到平衡态，而本书的大部分就是处理平衡态。
+%%% Lo$cal Variables:
 %%% mode: latex
 %%% TeX-master: t
 %%% End:
