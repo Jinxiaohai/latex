@@ -98,6 +98,11 @@
 \noindent{\color{red}{os.getpriority(which, who):}}
 \par{未知}\\
 
+\noindent{\color{red}{os.PRIO\_PROCESS}}\\
+\noindent{\color{red}{os.PRIO\_PGRP}}\\
+\noindent{\color{red}{os.PRIO\_USER}}
+\par{getpriority()和setpriority()的参数。}\\
+
 \noindent{\color{red}{os.getresuid():}}
 \par{返回一个元组(ruid, euid, suid)代表当前进程的real, effective和saved user ids。}\\
 
@@ -110,9 +115,435 @@
 \noindent{\color{red}{os.initgroups(username, gid):}}
 \par{未知。}\\
 
+\noindent{\color{red}{os.putenv(key, value):}}
+\par{将环境变量名字为key的值为value。}\\
+
+\noindent{\color{red}{os.setegid(egid):}}
+\par{设置当前进程的有效组id。}\\
+
+\noindent{\color{red}{os.seteuid(euid):}}
+\par{设置当前进程的有效用户id。}\\
+
+\noindent{\color{red}{os.setgid(gid):}}
+\par{设置当前进程组的id.}\\
+
+\noindent{\color{red}{os.setgroups(groups):}}
+\par{设置当前进程支持的groupsid列表。groups必须是列表，每个元素必须是整数，这个操作只对超级用户组有效。}\\
+
+\noindent{\color{red}{os.setpgrp():}}
+\par{未知}\\
+
+\noindent{\color{red}{os.setpgid(pid, pgrp):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.setpriority(which, who, priority):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.setregid(rgid, egid):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.setresuid(ruid, euid, suid):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.setreuid(ruid, euid):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.getsid(pid):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.setsid():}}
+\par{未知}\\
+
+\noindent{\color{red}{os.setuid(uid):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.strerror(code):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.supports\_bytes\_environ:}}
+\par{未知}\\
+
+\noindent{\color{red}{os.umask(mask):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.uname():}}
+\par{未知}\\
+
+\noindent{\color{red}{os.unsetenv(key):}}
+\par{未知}\\
 
 
 
+
+
+
+\subsection{File Object Creation}
+
+\noindent{\color{red}{os.fdopen(fd, *args, **kwargs):}}
+\par{未知}\\
+
+
+
+
+
+\subsection{File Descriptor Operations}
+
+\noindent{\color{red}{os.close(fd):}}
+\par{关闭文件描述符。}\\
+
+\noindent{\color{red}{os.closerange(fd\_low, fd\_high):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.device\_encoding(fd):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.dup(fd):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.dup2(fd, fd2, inheritable=True):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.fchmod(fd, mode):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.fchown(fd, uid, gid):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.fdatasync(fd):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.fpathconf(fd, name):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.fstat(fd):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.fstatvfs(fd):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.fsync(fd):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.ftruncate(fd, length):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.get\_blocking(fd):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.isatty(fd):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.lockf(fd, cmd, len):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.F\_LOCK:}}\\
+\noindent{\color{red}{os.F\_TLOCK}}\\
+\noindent{\color{red}{os.F\_ULOCK}}\\
+\noindent{\color{red}{os.F\_TEST}}
+\par{未知}\\
+
+\noindent{\color{red}{os.lseek(fd, pos, how):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.SEEK\_SET}}\\
+\noindent{\color{red}{os.SEEK\_CUR}}\\
+\noindent{\color{red}{os.SEEK\_END}}
+\par{未知}\\
+
+\noindent{\color{red}{os.open(path, flags, mode=0o777, *, dir\_fd=None):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.O\_RDONLY:}}\\
+\noindent{\color{red}{os.O\_WRONLY:}}\\
+\noindent{\color{red}{os.O\_RDWR:}}\\
+\noindent{\color{red}{os.O\_APPEND:}}\\
+\noindent{\color{red}{os.O\_CREAT:}}\\
+\noindent{\color{red}{os.O\_EXCL:}}\\
+\noindent{\color{red}{os.O\_TRUNC:}}\\
+\noindent{\color{red}{os.O\_DSYNC:}}\\
+\noindent{\color{red}{os.O\_RSYNC:}}\\
+\noindent{\color{red}{os.O\_SYNC:}}\\
+\noindent{\color{red}{os.O\_NDELAY:}}\\
+\noindent{\color{red}{os.O\_NONBLOCK:}}\\
+\noindent{\color{red}{os.O\_NOCTTY:}}\\
+\noindent{\color{red}{os.O\_CLOEXEC:}}\\
+\noindent{\color{red}{os.O\_BINATY:}}\\
+\noindent{\color{red}{os.O\_NOINHERIT:}}\\
+\noindent{\color{red}{os.O\_SHORT\_LIVED:}}\\
+\noindent{\color{red}{os.O\_TEMPORARY:}}\\
+\noindent{\color{red}{os.O\_RANDOM:}}\\
+\noindent{\color{red}{os.O\_SEQUENTIAL:}}\\
+\noindent{\color{red}{os.O\_TEXT:}}\\
+\noindent{\color{red}{os.O\_ASYNC:}}\\
+\noindent{\color{red}{os.O\_DIRECT:}}\\
+\noindent{\color{red}{os.O\_DIRECTORY:}}\\
+\noindent{\color{red}{os.O\_NOFOLLOW:}}\\
+\noindent{\color{red}{os.O\_NOATIME:}}\\
+\noindent{\color{red}{os.O\_PATH:}}\\
+\noindent{\color{red}{os.O\_TMPFILE:}}\\
+\noindent{\color{red}{os.O\_SHLOCK:}}\\
+\noindent{\color{red}{os.O\_EXLOCK:}}
+\par{未知}\\
+
+\noindent{\color{red}{os.openpty():}}
+\par{未知}\\
+
+\noindent{\color{red}{os.pipe():}}
+\par{未知}\\
+
+\noindent{\color{red}{os.pipe2(flags):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.posix\_fallocate(fd, offset, len):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.posix\_fadvise(fd, offset, len, advice):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.POSIX\_FADV\_NORMAL:}}\\
+\noindent{\color{red}{os.POSIX\_FADV\_SEQUENTIAL:}}\\
+\noindent{\color{red}{os.POSIX\_FADV\_RANDOM:}}\\
+\noindent{\color{red}{os.POSIX\_FADV\_NOREUSE:}}\\
+\noindent{\color{red}{os.POSIX\_FADV\_WILLNEED:}}\\
+\noindent{\color{red}{os.POSIX\_FADV\_DONTNEED:}}
+\par{未知}\\
+
+\noindent{\color{red}{os.pread(fd, buffersize, offset):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.pwrite(fd, str, offset):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.read(fd, n):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.sendfile(out, in, offset, count):}}\\
+\noindent{\color{red}{os.sendfile(out, in, offset, count, [headers,][trailers,]flags=0)}}
+\par{未知}\\
+
+\noindent{\color{red}{os.set\_blocking(fd, blocking):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.SF\_NODISKIO:}}\\
+\noindent{\color{red}{os.SF\_MNOWAIT:}}\\
+\noindent{\color{red}{os.SF\_SYNC:}}
+\par{未知}\\
+
+\noindent{\color{red}{os.read(fd, buffers):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.tcgetpgrp(fd):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.tcsetpgrp(fd, pg):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.ttyname(fd):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.write(fd, str):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.writev(fd, buffers):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.get\_terminal\_size(fd=STDOUT\_FILENO):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.terminal\_size:}}
+\par{未知}\\
+
+\noindent{\color{red}{os.get\_inheritable(fd):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.set\_inheritable(fd, inheritable):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.get\_handle\_inheritable(handle):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.set\_handle\_inheritable(handle, inheritable):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.access(path, mode, *, dir\_fd=None, effective\_ids=False,\\ follow\_symlinks=True):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.F\_OK:}}
+\noindent{\color{red}{os.R\_OK:}}
+\noindent{\color{red}{os.W\_OK:}}
+\noindent{\color{red}{os.X\_OK:}}
+\par{未知}\\
+
+\noindent{\color{red}{os.chdir(path):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.chflags(path, flags, *, follows\_symlinks=True):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.chmod(path, mode, *, dir\_fd=None, follow\_symlinks=True):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.chown(path, uid, gid, *, dir\_fd=None, follow\_symlinks=True):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.chroot(path):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.fchdir(fd):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.getcwd():}}
+\par{未知}\\
+
+\noindent{\color{red}{os.getcwdb():}}
+\par{未知}\\
+
+\noindent{\color{red}{os.lchflags(path, flags):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.lchmod(path, mode):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.lchown(path, uid, gid):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.link(src, dst, *, src\_dir\_fd=None, dst\_dir\_fd=None,\\ follow\_symlinks=True):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.listdir(path=\textquoteleft{.}\textquoteright{}):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.lstat(path, *, dir\_fd=None):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.mkdir(path, mode=0o777, *, dir\_fd=None):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.makedirs(name, mode=0o777, exist\_ok=False):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.mkfifo(path, mode=0o666, *, dir\_fd=None):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.mknod(path, mode=0o666, device=0, *, dir\_fd=None):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.major(device):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.minor(device):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.makedev(major, minor):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.pathconf(path, name):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.pathconf\_names:}}
+\par{未知}\\
+
+\noindent{\color{red}{os.readlink(path, *, dir\_fd=None):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.remove(path, *, dir\_fd=None):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.removedirs(name):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.rename(src, dst, *, src\_dir\_fd=None, dst\_dir\_fd=None):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.renames(old, new):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.replace(src, dst, *, src\_dir\_fd=None, dst\_dir\_fd=None):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.rmdir(path, *, dir\_fd=None):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.scandir(path=\textquoteleft{.}\textquoteright{}):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.stat(path, *, dir\_fd=None, follow\_symlinks=True):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.stat\_float\_times([newvalue]):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.statvfs(path):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.supports\_dir\_fd:}}
+\par{未知}\\
+
+\noindent{\color{red}{os.supports\_effective\_ids:}}
+\par{未知}\\
+
+\noindent{\color{red}{os.supports\_fd:}}
+\par{未知}\\
+
+\noindent{\color{red}{os.supports\_follow\_symlinks:}}
+\par{未知}\\
+
+\noindent{\color{red}{os.symlinks(src, dst, target\_is\_directory=False, *, dir\_fd=None):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.sync():}}
+\par{未知}\\
+
+\noindent{\color{red}{os.truncate(path, length):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.unlink(path, *, dir\_fd=None):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.utime(path, times=None, *, [ns, ]dir\_fd=None, follow\_symlinks=True):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.walk(top, topdown=True, onerror=None, followlinks=False):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.fwalk(top=\textquoteleft{.}\textquoteright{}, topdown=True, onerror=None, *, follow\_symlinks=False, dir\_fd=None):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.getattr(path, attribute, *, follow\_symlinks=True):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.listxattr(path=None, *, follow\_symlinks=True):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.listattr(path=None, *, follow\_symlinks=True):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.removexattr(path, attribute, *, follow\_symlinks=True):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.setxattr(path, attribute, value, flags=0, *, follow\_symlinks=True):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.XATTR\_SIZE\_MAX:}}
+\par{未知}\\
+
+\noindent{\color{red}{os.XATTR\_SIZE\_CREATE:}}
+\par{未知}\\
+
+\noindent{\color{red}{os.XATTR\_SIZE\_REPLACE:}}
+\par{未知}\\
+
+\noindent{\color{red}{os.abort():}}
+\par{未知}\\
+
+\noindent{\color{red}{os.execl(path, arg0, arg1, \dots):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.execle(path, arg0, arg1, \dots, env):}}
+\par{未知}\\
+
+\noindent{\color{red}{os.execlp(file, arg0, arg1, \dots):}}
+\par{未知}\\
 
 
 %%% Local Variables:

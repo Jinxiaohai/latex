@@ -84,6 +84,32 @@
 \noindent{\color{red}{os.path.realpath(path):}}
 \par{未知}\\
 
+\noindent{\color{red}{os.path.relpath(path, start=os.curdir):}}
+\par{返回一个相对路径，该路径从当前目录算起或者从start指定的目录算起。}\\
+
+\noindent{\color{red}{os.path.samefile(path1, path2):}}
+\par{如果path1和path2是相同的目录或者文件，则返回True。}\\
+
+\noindent{\color{red}{os.path.sameopenfile(fp1, fp2):}}
+\par{如果fp1和fp2是指向相同的文件，则返回True，注意fp1和fp2都必须是打开的文件。}\\
+
+\noindent{\color{red}{os.path.samestat(stat1, stat2):}}
+\par{如果stat 元组stat1和stat2指向同一文件，则返回True。}\\
+
+\noindent{\color{red}{os.path.split(path):}}
+\par{把路径path分割成(head, tail)的元组，类似分割为dirname和basename。}\\
+
+\noindent{\color{red}{os.path.splitdrive(path):}}
+\par{一般在Windows下，返回驱动器名和路径组成的元组。}\\
+
+\noindent{\color{red}{os.path.splitext(path):}}
+\par{分割路径，返回路径加文件名和文件扩展名的元组,类似(name, .py)。}\\
+
+\noindent{\color{red}{os.path.splitunc(path):}}
+\par{把路径分割为加载点和文件。}\\
+
+
+
 
 
 \section{fileinput}
@@ -155,7 +181,8 @@ shutil模块提供了较高级别的文件和目录的操作。尤其是函数�
 \noindent{\color{red}{shutil.ignore\_patterns(*patterns):}}
 \par{未知}\\
 
-\noindent{\color{red}{shutil.copytree(src, dst, sysmlinks=False, ignore=None,\\ copy\_function=copy2, ignore\_dangling\_sysmlinks=False):}}
+\noindent{\color{red}{shutil.copytree(src, dst, sysmlinks=False, ignore=None,copy\_function=copy2,\\
+ignore\_dangling\_sysmlinks=False):}}
 \par{递归的拷贝文件目录及其下面的所有文件。}\\
 
 \noindent{\color{red}{shutil.rmtree(path, ignore\_errors=False, onerror=None):}}
@@ -179,7 +206,38 @@ shutil模块提供了较高级别的文件和目录的操作。尤其是函数�
 \subsection{Archiving operations}
 
 \noindent{\color{red}{shutil.make\_archive(base\_name, format[, root\_dir[, base\_dir[, verbose[, dry\_run[, owner[, group[, logger]]]]]]]):}}
-\par{创建一个架构文件并返回它的名字。}\\
+\par{压缩打包文件并返回它的名字。}
+\begin{enumerate}
+\item base\_name :   压缩打包后的文件名，包含路径。
+\item format : 文档的格式，可以是“zip”，“tar”，“gztar”，“bztar”，“xztar”。
+\item root\_dir : 压缩完成后的的文件夹路径(默认为当前路径)。
+\item base\_dir : 要压缩的文档的路径(默认为当前路径)。
+\end{enumerate}
+
+\noindent{\color{red}{shutil.get\_archive\_formats():}}
+\par{返回支持的文档的格式类型。}\\
+
+\noindent{\color{red}{shutil.register\_archive\_format(name, function[, extra\_args[, description]]):}}
+\par{未知}\\
+
+\noindent{\color{red}{shutil.unregister\_archive\_format(name):}}
+\par{未知}\\
+
+\noindent{\color{red}{shutil.unpack\_archive(filename[, extra\_dir[, format]]):}}
+\par{未知}\\
+
+\noindent{\color{red}{shutil.register\_unpack\_format()name, extensions, function[, extra\_args[, description]]:}}
+\par{未知}\\
+
+\noindent{\color{red}{shutil.unregister\_unpack\_format(name):}}
+\par{未知}\\
+
+\noindent{\color{red}{shutil.get\_unpack\_formats():}}
+\par{未知}\\
+
+\subsection{Querying the size of the output terminal}
+\noindent{\color{red}{shutil.get\_terminal\_size(fallback=(columns, lines)):}}
+\par{未知}\\
 
 
 
