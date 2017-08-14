@@ -64,7 +64,31 @@ $\omega_{\mu}(t)$是含时的，对系统的测量可能会影响到$\omega_{\mu
 
 \section{平衡态}
 让我们再考虑\textbf{master equation}(\ref{eq:1})。如果等式的右边两部分可以抵消掉，即$d\omega_{\mu}/dt$等于0.也就是权
-重参数$\omega$将是常数。这时系统达到平衡态，而本书的大部分就是处理平衡态。
+重参数$\omega$将是常数。这时系统达到平衡态，而本书的大部分就是处理平衡态，在这部分我们主要引入一些重要的统计概念。
+\par
+在master equation中的转变概率$R(\mu-\nu)$do not just take any values. They take particular values which arise out of the
+thermal nature of the interaction between the system and the thermal reservoir. In the later chapter of this book we
+will have to choose values for these rates when we simulate thermal systems in out Monte Carlo calculations with the
+thermal reservoir correctly.重要的是，对于系统我们知道一些先验的权重值$\omega_{\mu}$。我们将这些平衡值称为
+\textbf{equilibrium occupation probabilities}，并表示为
+\begin{equation}
+  \label{eq:4}
+  p_{\mu} = \lim_{t\rightarrow\infty}\omega_{\mu}(t).
+\end{equation}
+吉布斯(1902)证明对于一个处在温度T下的系统，equilibrium occupation probabilities是
+\begin{equation}
+  \label{eq:5}
+  p_{\mu} = \frac{1}{Z}e^{E_{\mu}/kT}.
+\end{equation}
+其中$E_\mu$是状态$\mu$下的能量，k是玻尔兹曼常数，其值为1.38$\texttimes$$10^{-23}JK^{-1}$，习惯上我们用$\beta$来表示
+$(KT)^{-1}$，Z是归一化常数
+\begin{equation}
+  \label{eq:6}
+  Z = \sum_{\mu}e^{-E_{\mu}/kT} = \sum_{\mu}e^{-{\beta}E_{\mu}}
+\end{equation}
+Z就是配分函数，it figures a lot more heavily in the mathematical development of statistical mechanics than a mere
+normalizing constant might be expected to.事实上，Z作为温度T和其它的影响系统的参数，几乎可以表征系统的任何物理量。概率分
+布(\ref{eq:5})即玻尔兹曼分布。In our treatment, we will take Equation (\ref{eq:5})作为我们进一步讨论的出发点。
 %%% Lo$cal Variables:
 %%% mode: latex
 %%% TeX-master: t
