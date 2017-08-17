@@ -34,24 +34,218 @@
 
 
 
+
 \section{urllib.request}
-\noindent{\color{red}{urllib.request.urlopen(url, data=None, [timeout,]*, cafile=None, cadefault=False, context=None):}}
+The urllib.request module defines functions and classes which help in opening URLs (mostly HTTP) in
+a complex world ----basic and digest authentication, redirections, cookies and more.\\
+The urllib.request模块包含以下函数:\\
+
+\noindent{\color{red}{urllib.request.urlopen(url, data=None, [timeout,]*, cafile=None, capath=None, cadefault=False, context=None)\\
+:}}
+\par{打开url，其中url可以是字符串也可以是Request对象。}\\
+\begin{itemize}
+\item[.]{data :是一个定义了需要发给server端数据的对象或者None，一个标准的
+application/x-www-from-urlencoded格式的buffer.urllib.request模块使用HTTP/1.1协议，并且在HTTP请求的报
+头中包含Connection:close.}\\
+\item[.]{timeout :设定连接的超时时间，如果没有设定的话就使用全局超时时间，仅对HPPT，HPPTS，
+FTP连接有效。}
+\item[.]{context: 如果定义了，则必须是一个描述SSL选项的ss.SSLContext实例，查看HPPTSConnection
+相关资料获取详细描述。}
+\item[.]{cafile和capath：参数定义了HTTPS请求中的可信任CA证书，cadefault参数可以省略。}
+\end{itemize}
+
+调用该方法返回一个像context manager一样工作且包含如下方法的对象(http.client.HTTPSResponse的实例)：\\
+\begin{itemize}
+\item[.]{gerurl() : 返回一个资源索引URL，决定是否需要重定向。}
+\item[.]{info() : 返回有关HTTP报头的元信息。}
+\item[.]{getcode() : 获取响应码通。}
+\end{itemize}
+
+\noindent{\color{red}{urllib.request.install\_opener(opener):}}
+\par{安装一个openerDirector实例作为默认的opener.}\\
+
+\noindent{\color{red}{urllib.request.build\_opener([handler, \dots]):}}
+\par{返回一个OpenerDirector的实例。}\\
+
+\noindent{\color{red}{urllib.request.pathname2url(path):}}
+\par{转换路径到URL，默认为/，并不会生成一个完整的URL。}\\
+
+\noindent{\color{red}{urllib.request.url2pathname(path):}}
+\par{转换the path component path from a percent-encoded URL to the local syntax for a path.}\\
+
+\noindent{\color{red}{urllib.request.getproxies():}}
+\par{返回一个代理服务器调用的map的字典。}\\
+
+下面的这些类也是提供的：
+\noindent{\color{red}{class urllib.request.Request(url, data=None, headers={},\\
+origin\_req\_host=None, unverifiable=False, method=None):}}
+\par{未知}\\
+
+\noindent{\color{red}{class urllib.request.OpenerDirector:}}
+\par{未知}\\
+
+\noindent{\color{red}{class urllib.request.BaseHandler:}}
+\par{未知}\\
+
+\noindent{\color{red}{class urllib.request.HTTPDefaultErrorHandler:}}
+\par{未知}\\
+
+\noindent{\color{red}{class url.request.HTTPRedirecHandler:}}
+\par{未知}\\
+
+\noindent{\color{red}{class urllib.request.HTTPCookieProcessor(cookiejar=None):}}
+\par{未知}\\
+
+\noindent{\color{red}{class urllib.request.ProxyHandler(proxies=None):}}
+\par{未知}\\
+
+\noindent{\color{red}{class urllib.request.HTTPPasswordMgr:}}
+\par{未知}\\
+
+\noindent{\color{red}{class urllib.request.HTTPPasswordMgrWithDefaultReal:}}
+\par{未知}\\
+
+\noindent{\color{red}{class urllib.request.AbstractBasicAuthHandler(password\_mgr=None):}}
+\par{未知}\\
+
+\noindent{\color{red}{class urllib.request.HTTPBasicAuthHandler(password\_mgr=None):}}
+\par{未知}\\
+
+\noindent{\color{red}{class urllib.request.ProxyBasicAuthHandler(password\_mgr=None):}}
+\par{未知}\\
+
+\noindent{\color{red}{class urllib.request.AbstractDigestAuthHandler(password\_mgt=None):}}
+\par{未知}\\
+
+\noindent{\color{red}{class urllib.request.HTTPDigestAuthHandler(password\_mgr=None):}}
+\par{未知}\\
+
+\noindent{\color{red}{class urllib.request.ProxyDigestAuthHandler(password\_mgt=None):}}
+\par{未知}\\
+
+\noindent{\color{red}{class urllib.request.HTTPHandler:}}
+\par{未知}\\
+
+\noindent{\color{red}{class urllib.request.HTTPSHandler(debuglevel=0, context=None,\\
+ check\_hostname=None):}}
+\par{未知}\\
+
+\noindent{\color{red}{class urllib.request.FileHandler:}}
+\par{未知}\\
+
+\noindent{\color{red}{class urllib.request.DataHandler:}}
+\par{未知}\\
+
+\noindent{\color{red}{class urllib.request.FTPHandler:}}
+\par{未知}\\
+
+\noindent{\color{red}{class urllib.request.CacheFTPHandler:}}
+\par{未知}\\
+
+\noindent{\color{red}{class urllib.request.UnknownHandler:}}
+\par{未知}\\
+
+\noindent{\color{red}{class urllib.request.HTTPErrorProcessor:}}
+\par{未知}\\
+
+\subsection{Request Objects}
+下面的方法描述了Request的共有方法，因此下面的所有的方法都可以在继承类中进行重载。\\
+
+\noindent{\color{red}{Request.full\_url:}}
+\par{未知}\\
+
+\noindent{\color{red}{Request.type:}}
+\par{未知}\\
+
+\noindent{\color{red}{Request.host:}}
+\par{未知}\\
+
+\noindent{\color{red}{Request.origin\_req\_host:}}
+\par{未知}\\
+
+\noindent{\color{red}{Request.selector:}}
+\par{未知}\\
+
+\noindent{\color{red}{Request.data:}}
+\par{未知}\\
+
+\noindent{\color{red}{Request.unverifiable:}}
+\par{未知}\\
+
+\noindent{\color{red}{Request.method:}}
+\par{未知}\\
+
+\noindent{\color{red}{Request.get\_method():}}
+\par{未知}\\
+
+\noindent{\color{red}{Request.add\_header(key, val):}}
+\par{未知}\\
+
+\noindent{\color{red}{Request.add\_unredirected\_header(key, header):}}
+\par{未知}\\
+
+\noindent{\color{red}{Request.has\_header(header):}}
+\par{未知}\\
+
+\noindent{\color{red}{Request.remove\_header(header):}}
+\par{未知}\\
+
+\noindent{\color{red}{Request.get\_full\_url():}}
+\par{未知}\\
+
+\noindent{\color{red}{Request.set\_proxy(host, type):}}
+\par{未知}\\
+
+\noindent{\color{red}{Request.get\_header(header\_name, default=None):}}
+\par{未知}\\
+
+\noindent{\color{red}{Request.header\_items():}}
+\par{未知}\\
+
+\subsection{OPenerDirector Objects}
+OpenerDirector instance有下面的方法。
+
+\noindent{\color{red}{OpenerDirector.add\_Handler(Handler):}}
+\par{未知}\\
+
+\noindent{\color{red}{OpenerDirector.open(url, data=None[, timeout]):}}
+\par{未知}\\
+
+\noindent{\color{red}{OpenerDirector.error(proto, *args):}}
+\par{未知}\\
+
+\subsection{BaseHandler Objects}
+Basehandler objects provide a couple of methods that are directly useful, and others that are
+meant to be used by derived classes. These are intended for direct use:
+
+\noindent{\color{red}{BaseHandler.add\_parent(director):}}
+\par{未知}\\
+
+\noindent{\color{red}{BaseHandler.close():}}
 \par{未知}\\
 
 
 
 
 
-
-
 \section{urllib.response}
-
+the urllib.response module defines functions and classes which define a minimal file like
+interface, including read() and readline(). The typical reponse object is an addinfourl instance,
+ which defines an info() method and that returns headers and a geturl() method that returns the
+url. Functions defined by this module are used internally by the urllib.request module.
 
 
 
 
 \section{urllib.parse}
+This module defines a standard interface to break Uniform Response Locator(URL) strings up in
+components (addressing scheme, network location, path etc.) to combine the components back into
+a URL string, and to convert a \textquotedblleft{relative URL}\textquotedblright{} to an absolute
+URL given a \textquotedblleft{base URL}\textquotedblright{}.\\
 
+The module has been designed to match the internet RFC on Relative Uniform Resource Locator. It
+supports the following scheme: file, ftp, gopher, hdl, http, https, imap, mailto, mms, news, nntp,
+prospero, rsync, rtsp, rtspu, sftp, shttp, sip, sips, snews, svn, svn+ssh, telnet, wais, ws, wss.
 
 
 

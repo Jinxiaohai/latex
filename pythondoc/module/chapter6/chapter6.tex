@@ -1,5 +1,78 @@
 %#-*- coding:utf-8 -*-
 \chapter{文本处理服务}
+\section{string}
+
+
+
+
+\section{re}
+该模块提供了正则表达式的处理操作。
+Both patterns and strings to be searched can be Unicode strings as well as 8-bit strings. However, Unicode strings and 8-bit strings cannot be mixed: that is, you cannot match a Unicode string with a byte pattern or vice-versa; similarly,when asking for a substitution, the replacement string must be of the same type as both the pattern and the search string.
+\par
+Regular expressions use the backslash character \textquoteleft{}\textbackslash{}\textquoteright{}) to indicate special forms or to allow special characters to be used without invoking their special meaning. This collides with Python’s usage of the same character for the same purpose in string literals; for example, to match a literal backslash, one might have to write \textquoteleft{}\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}\textquoteright{} as the pattern string, because the regular expression must be \textbackslash{}\textbackslash{}, and each backslash must be expressed as \textbackslash{}\textbackslash{} inside a regular Python string literal.
+\par
+The solution is to use Python’s raw string notation for regular expression patterns; backslashes are not handled in any
+special way in a string literal prefixed with \textquoteleft{r}\textquoteright{}. So r\textquotedblleft{}\textbackslash{n}\textquotedblright{} is a two-character string containing \textquoteleft{}\textbackslash{}\textquoteright{} and \textquoteleft{n}\textquoteright{}, while
+\textquotedblleft{}\textbackslash{n}\textquoteright{} is a one-character string containing a newline. Usually patterns will be expressed in Python code using this raw
+string notation.\\
+\par
+正则表达式的基本语法：
+\begin{enumerate}
+\item \textquoteleft{.}\textquoteright{}:在缺省的模式下，该符号匹配除了换行符外(\textquoteleft{}\textbackslash{n}\textquoteright{})的任何字符。
+\item \textquoteleft{}\^{}\textquoteright{}:匹配字符串的起始部分。
+\item \textquoteleft{}\$\textquoteright{}:匹配字符串的终止部分。
+\item \textquoteleft{}*\textquoteright{}:匹配0次或者多次前面出现的正则表达式。
+\item \textquoteleft{}+\textquoteright{}:匹配1次或者多次前面出现的正则表达式。
+\item \textquoteleft{}?\textquoteright{}:匹配0次或者1次前面出现的正则表达式。
+\item \textquoteleft{}\{m\}\textquoteright{}:匹配m次前面出现的正则表达式。
+\item \textquoteleft{}\{m, n\}\textquoteright{}:匹配m$\sim$次前面出现的正则表达式。
+\item $\left[\dots\right]$:匹配来自字符集的任意单一字符。
+\item \textquoteleft{}$|$\textquoteright{}:A$|$B匹配A，B之间的任意一个。
+\item (\dots):匹配封闭的正则表达式，然后另存为子组。
+\item (?\dots):未知。
+\item (?aiLmsux):在正则表达式中嵌入一个或者多个特殊\textquotedblleft{标记}\textquotedblright{}参数。
+\item (?:\dots):表示一个匹配但不用保存的分组。
+\item (?imsx-imsx:\dots):未知。
+\item (?P\texttt{<}name\texttt{>}\dots{}):像一个仅由name标记而不是数字ID标识的正则分组匹配。
+\end{enumerate}
+
+\section{difflib}
+
+
+
+
+
+\section{textwrap}
+
+
+
+
+
+\section{unicodedata}
+
+
+
+
+
+\section{stringprep}
+
+
+
+
+
+\section{readline}
+
+
+
+
+
+\section{rlcompleter}
+
+
+
+
+
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
