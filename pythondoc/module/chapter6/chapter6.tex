@@ -36,6 +36,146 @@ string notation.\\
 \item (?P\texttt{<}name\texttt{>}\dots{}):像一个仅由name标记而不是数字ID标识的正则分组匹配。
 \end{enumerate}
 
+\subsection{Module methods}
+该模块定义了几个函数，常量和一个异常类型。\\
+
+\noindent{\color{red}{re.compile(pattern, flags=0):}}
+\par{编译一个正则表达式模式到一个正则表达式对象中，返回的就是该正则表达式对象，该对象拥有以下方法 : match() 和 search().}
+\begin{lstlisting}[language=Python]
+  prog = re.compile(pattern)
+  result = prog.match(string)
+等价于
+  result = re.match(pattern, string)
+\end{lstlisting}
+
+\noindent{\color{red}{re.A:}}\\
+\noindent{\color{red}{re.ASCII:}}
+\par{使$\backslash$w, $\backslash$W, $\backslash$b, $\backslash$B, $\backslash$d, $\backslash$D
+  $\backslash$s和$\backslash$S只采用ASCII匹配，而不是Unicode匹配。该方法只对Unicode
+patterns有意义。}\\
+
+\noindent{\color{red}{re.DEBUG:}}
+\par{展示关于compiled表达式的debug信息}\\
+
+\noindent{\color{red}{re.I:}}\\
+\noindent{\color{red}{re.IGNORECASE:}}
+\par{完成对字符大小写不敏感的匹配。}\\
+
+\noindent{\color{red}{re.L:}}\\
+\noindent{\color{red}{re.LOCAL:}}
+\par{使$\backslash$w, $\backslash$W, $\backslash$b, $\backslash$B,
+$\backslash$s和$\backslash$S以来当亲的locale.}\\
+
+\noindent{\color{red}{re.M:}}\\
+\noindent{\color{red}{re.MULTILINE:}}
+\par{未知}\\
+
+\noindent{\color{red}{re.S:}}\\
+\noindent{\color{red}{re.DOTALL:}}
+\par{未知}\\
+
+\noindent{\color{red}{re.X:}}
+\noindent{\color{red}{re.VERBOSE:}}
+\par{未知}\\
+
+\noindent{\color{red}{re.seach(pattern, string, flags=0):}}
+\par{search()会用它的字符串参数，在任意位置对给定的正则表达式模式搜索第一次出现的匹配情况,如果
+搜索到匹配成功的匹配，就会返回一个匹配对象，否则，返回None,调用返回对象的group()函数得到匹配的
+结果的str表示。}\\
+
+\noindent{\color{red}{re.match(pattern, string, flags=0):}}
+\par{match()函数试图从字符串的起始部分对模式进行匹配。如果匹配成功，就返回一个匹配对象；如果匹
+配失败，就返回None，匹配对象的group()方法能够用来显示那个成功的匹配。}\\
+\begin{itemize}
+\item[*]{group() : 匹配对象的group()方法能够用来显示那个成功的匹配。}
+\item[*]{start() : 返回匹配开始的位置。}
+\item[*]{end() : 返回匹配结束的位置。}
+\item[*]{span() : 返回一个元组包含匹配(开始，结束)的位置。}
+\end{itemize}
+
+\noindent{\color{red}{re.fullmatch(pattern, string, flags=0):}}
+\par{必须完全匹配才返回值，可以指定字符串的一段位置进行来匹配。}
+\begin{lstlisting}[language=Python]
+  patter = re.compile("o[gh]")
+  print(pattern,fullmatch("dog")) #返回None，没有og|oh开头。
+  print(pattern.fullmatch("ohr")) #返回None,不是整串完全匹配，虽然有oh开头，但是还包含字母r。
+  print(pattern.fullmatch("og"))  #返回og，完全匹配
+  print(pattern.fullmatch("doggie", 1, 3)) #返回og，完全匹配。
+\end{lstlisting}
+
+\noindent{\color{red}{re.split(pattern, string, maxsplit=0, flags=0):}}
+\par{字符串分割，str.split只能按照某个分割符分割，正则表达式可以按照某个规则进行分割。}\\
+
+\noindent{\color{red}{re.findall(pattern, string, flags=0):}}
+\par{获取全部的匹配字符，返回一个所有匹配字符串的列表。}\\
+
+\noindent{\color{red}{re.finditer(pattern, string, flags=0):}}
+\par{与findall类似，只是返回的是一个迭代器。}\\
+
+\noindent{\color{red}{re.sub(pattern, repl, string, count=0, flags=0):}}
+\par{sub()将根据正则表达式找到的字符串用新的字符串进行替换，返回结果为字符串。}
+\begin{itemize}
+\item[*]{pattern : 正则表达式。}
+\item[*]{repl : 替换的字符串。}
+\item[*]{string : 源字符串。}
+\item[*]{count : 表示要替换的个数。}
+\end{itemize}
+
+\noindent{\color{red}{re.subn(pattern, repl, string, count=0, flags=0):}}
+\par{和sub()的作用相同，单数返回的是一个元组(new\_string, number\_of\_subs\_made)}\\
+
+\noindent{\color{red}{re.escape(string):}}
+\par{对字符串中的非字母数字进行转义。}\\
+
+\noindent{\color{red}{re.purge():}}
+\par{清空缓存中的正则表达式。}\\
+
+
+
+
+\subsection{返回的匹配对象的操作}
+
+Match objects support the following methods and attributes.
+\noindent{\color{red}{match.expand(template):}}
+\par{Return the string obtained by doing backslash substitution on the template string template.}\\
+
+\noindent{\color{red}{match.group([group1, \dots]):}}
+\par{无参数的时候返回整个的字符串，注意有参数时候的结果的意义。}\\
+
+\noindent{\color{red}{match.groups(default=None):}}
+\par{这个自己慢慢的看下，要认真。}\\
+
+\noindent{\color{red}{match.groupdict(default=None):}}
+\par{未知}\\
+
+\noindent{\color{red}{match.start([group]):}}
+\par{未知}\\
+
+\noindent{\color{red}{match.end([group]):}}
+\par{未知}\\
+
+\noindent{\color{red}{match.span([group]):}}
+\par{未知}\\
+
+\noindent{\color{red}{match.pos:}}
+\par{未知}\\
+
+\noindent{\color{red}{match.endpos:}}
+\par{未知}\\
+
+\noindent{\color{red}{match.lastindex:}}
+\par{未知}\\
+
+\noindent{\color{red}{match.lastgroup:}}
+\par{未知}\\
+
+\noindent{\color{red}{match.re:}}
+\par{未知}\\
+
+\noindent{\color{red}{match.string:}}
+\par{未知}\\
+
+
 \section{difflib}
 
 
